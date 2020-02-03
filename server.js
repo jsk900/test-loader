@@ -15,14 +15,17 @@ app.post('/upload', (req, res) => {
 
   const file = req.files.file;
 
-  file.mv(`${__dirname}/uploads/${file.name}`, err => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send(err);
-    }
+  file.mv(
+    `${__dirname}http://uploader.goldencat.co.uk//uploads/${file.name}`,
+    err => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send(err);
+      }
 
-    res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
-  });
+      res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+    }
+  );
 });
 
 const PORT = process.env.PORT || 5000;
