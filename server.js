@@ -16,7 +16,7 @@ app.post('/upload', (req, res) => {
   const file = req.files.file;
 
   file.mv(
-    `https://lt-files.hostinger.de/home/u754198572/public_html/uploader/uploads/${file.name}`,
+    `https://hostinger.de/home/u754198572/public_html/uploader/uploads/${file.name}`,
     err => {
       if (err) {
         console.error(err);
