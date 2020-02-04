@@ -15,7 +15,7 @@ app.post('/upload', (req, res) => {
 
   const file = req.files.file;
 
-  file.mv(`http://uploader.goldencat.co.uk/uploads/${file.name}`, err => {
+  file.mv(`https://weather.goldencat.co.uk/uploads/${file.name}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
