@@ -23,7 +23,7 @@ app.post('/upload', (req, res) => {
 
     res.json({
       fileName: file.name,
-      filePath: `${__dirname}/public_html/uploader/uploads/${file.name}`
+      filePath: `https://lt-files.hostinger.de/${__dirname}/public_html/uploader/uploads/${file.name}`
     });
   });
 });
