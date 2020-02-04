@@ -15,7 +15,7 @@ app.post('/upload', (req, res) => {
 
   const file = req.files.file;
 
-  file.mv(`/uploads/${file.name}`, err => {
+  file.mv(`/${__dirname}/../../uploads/${file.name}`, err => {
     if (err) {
       console.error(err);
       return res.status(500).send(err);
@@ -23,7 +23,7 @@ app.post('/upload', (req, res) => {
 
     res.json({
       fileName: file.name,
-      filePath: `https://lt-files.hostinger.de/${__dirname}/public_html/uploader/uploads/${file.name}`
+      filePath: `http://uploader.goldencat.co.uk/${__dirname}/public_html/uploader/uploads/${file.name}`
     });
   });
 });
