@@ -15,17 +15,20 @@ app.post('/upload', (req, res) => {
 
   const file = req.files.file;
 
-  file.mv(`https://weather.goldencat.co.uk/uploads/${file.name}`, err => {
-    if (err) {
-      console.error(err);
-      return res.status(500).send(err);
-    }
+  file.mv(
+    `/home/u754198572/domains/goldencat.co.uk/public_html/uploader/uploads ${file.name}`,
+    err => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send(err);
+      }
 
-    res.json({
-      fileName: file.name,
-      filePath: `http://uploader.goldencat.co.uk/${__dirname}/public_html/uploader/uploads/${file.name}`
-    });
-  });
+      res.json({
+        fileName: file.name,
+        filePath: `http://uploader.goldencat.co.uk/${__dirname}/public_html/uploader/uploads/${file.name}`
+      });
+    }
+  );
 });
 
 const PORT = process.env.PORT || 5000;
