@@ -16,7 +16,7 @@ app.post('/upload', (req, res) => {
   const file = req.files.file;
 
   file.mv(
-    `${__dirname}/home/u754198572/domains/goldencat.co.uk/public_html/uploader/uploads ${file.name}`,
+    `/home/u754198572/domains/goldencat.co.uk/public_html/weather/uploads ${file.name}`,
     err => {
       if (err) {
         console.error(err);
